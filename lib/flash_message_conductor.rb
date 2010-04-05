@@ -2,7 +2,7 @@
 
 module PlanetArgon 
   module FlashMessageConductor
-    FLASH_MESSAGE_TYPES = [ :error, :notice, :message ]
+    FLASH_MESSAGE_TYPES = [ :error, :notice, :message, :alert ]
     
     module ControllerHelpers
       def add_error(msg)
@@ -15,6 +15,10 @@ module PlanetArgon
 
       def add_message(msg)
         flash[:message] = msg
+      end
+      
+      def add_alert(msg)
+        flash[:alert] = msg
       end
     end
   
