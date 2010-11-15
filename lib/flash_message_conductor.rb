@@ -29,7 +29,7 @@ module PlanetArgon
       end
     
       def render_flash_messages( div_id = "flash_messages", div_class = "" )
-        div_content = ''
+        div_content = ''.html_safe
         FLASH_MESSAGE_TYPES.each do |key|
           div_content << render_flash_message( key.to_s, flash[key] ) unless flash[key].blank?
         end
